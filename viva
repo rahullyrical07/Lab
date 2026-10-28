@@ -1,0 +1,515 @@
+Question 1
+Assignment 1
+
+What data structure did you use to store the book names and their borrow counts, and why?
+
+Check my answer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+just give all answers
+
+
+
+
+
+
+
+
+
+
+
+
+
+DS Lab Viva — All 11 Assignments with Answers
+Here are all the viva questions from your PDF, organized assignment-wise, with simple answers you can learn and speak directly in your exam.
+Assignment 1: Book Borrowing Analysis
+1. What data structures did you use to store book borrow counts and member borrow data?
+
+A dictionary can store book names as keys and borrow counts as values. Member borrowing information can be stored in dictionaries or lists, depending on the program.
+
+2. How do you compute the average of borrow counts?
+
+Add all the borrow counts and divide the sum by the total number of books.
+
+3. What is the time complexity of finding the highest borrowed book?
+
+\(O(n)\), because we may need to examine all \(n\) books.
+
+4. What is the difference between max() and sorting the dictionary?
+
+max() finds the maximum in \(O(n)\) time. Sorting arranges all elements and generally takes \(O(n\log n)\) time.
+
+5. How is the mode calculated?
+
+The mode is the value that occurs most frequently in a dataset.
+
+6. What happens if two books have the same highest borrow count?
+
+Both books are tied for the highest count. The program can return both if it handles ties.
+
+7. Why is dictionary lookup \(O(1)\)?
+
+A dictionary uses hashing to find a key directly, giving average-case \(O(1)\) lookup time.
+
+8. How would you handle large datasets?
+
+Use efficient data structures, avoid unnecessary sorting, and use a database when appropriate.
+
+9. Can the mode function throw an error? When?
+
+Yes. Python's statistics.mode() raises a StatisticsError for empty input.
+
+10. What is the space complexity of storing N books' borrow counts?
+
+\(O(n)\), because we store one entry per book.
+Assignment 2: Linear Search and Binary Search
+1. What is linear search?
+
+Linear search checks each element one by one until the target is found or the list ends.
+
+2. What is binary search?
+
+Binary search repeatedly divides a sorted search range into two halves to find the target.
+
+3. Why must binary search require a sorted list?
+
+It uses the ordering of elements to decide which half can contain the target. Without sorting, this decision is unreliable.
+
+4. Compare the time complexity of linear and binary search.
+- Linear search: \(O(n)\) worst case.
+- Binary search: \(O(\log n)\) worst case.
+5. What is the worst-case scenario in binary search?
+
+The target is absent or is found only after repeatedly dividing the search range until very little remains. The time complexity is \(O(\log n)\).
+
+6. What is the mid calculation formula?
+
+A common formula is:
+
+mid = low + (high - low) // 2
+
+7. What if the element is not present?
+
+The search ends when the search range becomes empty and returns a suitable result, such as -1 or False.
+
+8. Which search is better for small datasets?
+
+Linear search is often simpler and works well for small or unsorted datasets. Binary search is useful when data is sorted.
+
+9. Is binary search recursive or iterative?
+
+It can be implemented both recursively and iteratively.
+
+10. Can binary search work on a linked list? Why or why not?
+
+It is theoretically possible, but inefficient because linked lists do not support direct access to the middle element. Binary search works best with arrays or lists that support random access.
+Assignment 3: Sorting Algorithms
+1. How does selection sort work?
+
+It finds the smallest element in the unsorted part and swaps it with the first unsorted element. This repeats until the list is sorted.
+
+2. How does bubble sort work?
+
+It repeatedly compares adjacent elements and swaps them if they are in the wrong order. Larger elements move toward the end in ascending sorting.
+
+3. Which algorithm is more efficient? Why?
+
+Both have \(O(n^2)\) average and worst-case time complexity. Selection sort generally performs fewer swaps, while optimized bubble sort can finish in \(O(n)\) time for an already sorted list.
+
+4. What is the worst-case time complexity?
+
+Both selection sort and bubble sort have \(O(n^2)\) worst-case time complexity.
+
+5. What type of sorting is bubble sort: stable or unstable?
+
+Bubble sort is stable when it swaps only strictly out-of-order adjacent elements.
+
+6. Explain in-place sorting.
+
+In-place sorting rearranges elements within the original data structure and requires little additional memory, typically \(O(1)\) auxiliary space for these algorithms.
+
+7. Why is selection sort not stable?
+
+Standard selection sort is unstable because swapping the minimum element with the first unsorted element can change the relative order of equal elements.
+
+8. How do you extract the top 5 salaries after sorting?
+
+Sort salaries in descending order and select the first five elements.
+
+9. What if the list has fewer than 5 elements?
+
+Return all available elements. In Python, salaries[:5] safely returns up to five elements.
+
+10. Compare these algorithms with Python's built-in sort.
+
+Python's built-in sort() uses Timsort, which is stable and has \(O(n\log n)\) worst-case time complexity. It is generally more efficient than bubble sort and selection sort.
+Assignment 4: Stack-Based Undo and Redo
+1. Why do we use stacks for undo/redo?
+
+Stacks make it easy to reverse the most recent action first and restore a previously undone action.
+
+2. What is LIFO?
+
+LIFO stands for Last In, First Out. The last element inserted is the first one removed.
+
+3. Why are two stacks needed?
+
+One stack stores actions that can be undone, and the other stores actions that can be redone.
+
+4. What happens to redo history when a new change is made?
+
+The redo stack is cleared because the new action creates a different sequence of changes.
+
+5. What is the time complexity of push and pop operations?
+
+Both operations take \(O(1)\) time in a typical stack implementation.
+
+6. How do you display the current document state?
+
+Maintain the current document content as a string or another suitable data structure and display its current value.
+
+7. What happens if undo is performed when no action exists?
+
+Nothing is undone. The program should check whether the undo stack is empty.
+
+8. Can redo be done without doing an undo first?
+
+Normally, no. The redo stack must contain a previously undone action.
+
+9. Is stack memory dynamic?
+
+It depends on the implementation. An array-based stack may use a fixed or dynamically resized array, while a linked-list-based stack can grow node by node.
+
+10. How would you implement version control using stacks?
+
+Store previous versions in a stack. Move versions between undo and redo stacks when reverting or restoring changes. A real version-control system may use a more advanced structure.
+Assignment 5: Queue and Event Processing
+1. What is a queue?
+
+A queue is a linear data structure in which insertion happens at the rear and removal happens at the front.
+
+2. What is FIFO?
+
+FIFO stands for First In, First Out. The first element inserted is the first element removed.
+
+3. Why is a queue used for event processing?
+
+It processes events in the order they arrive, providing orderly and predictable execution.
+
+4. What is the difference between append() and popleft() in deque?
+
+append() adds an element to the right end, while popleft() removes an element from the left end. Both typically take \(O(1)\) time.
+
+5. How do you cancel a specific event?
+
+Search for the event and remove it from the queue. With a Python deque, locating and removing a specific event generally takes \(O(n)\) time.
+
+6. Why does removing from the middle of a queue take \(O(n)\)?
+
+The queue may need to search for the element and shift or rearrange elements around it.
+
+7. What is the time complexity of removing the oldest event?
+
+It is \(O(1)\) when using a suitable queue implementation, such as Python's collections.deque with popleft().
+
+8. Can queues be implemented using arrays or linked lists?
+
+Yes. Queues can be implemented using arrays, circular arrays, or linked lists.
+
+9. What is the difference between a queue and a stack?
+
+A queue follows FIFO, while a stack follows LIFO.
+
+10. What is a real-life example of a queue system?
+
+People waiting at a ticket counter, print jobs waiting for a printer, or customer requests waiting to be processed.
+Assignment 6: Linked Lists
+1. What is a linked list?
+
+A linked list is a linear data structure made of nodes. Each node stores data and a link to another node.
+
+2. What is the difference between a singly linked list and a doubly linked list?
+
+A singly linked list has a next pointer. A doubly linked list has both next and prev pointers, allowing traversal in both directions.
+
+3. Why use linked lists instead of arrays?
+
+Linked lists can grow or shrink dynamically, and inserting or deleting nodes can be efficient when the required position is already known. Arrays provide faster random access.
+
+4. What is the time complexity of searching in a linked list?
+
+\(O(n)\), because nodes may need to be checked one by one.
+
+5. How do you delete a node by roll number?
+
+Traverse the list to find the node with the matching roll number, then update the previous node's next pointer to skip the node. Handle the head separately if the first node must be deleted.
+
+6. How is traversal performed?
+
+Start at the head and follow each node's next pointer until reaching NULL or None.
+
+7. How do you sort a linked list by marks?
+
+Compare students' marks and rearrange nodes or swap their data values until the list is sorted. Merge sort is an efficient choice for linked lists, with \(O(n\log n)\) time complexity.
+
+8. What does a node contain?
+
+In a singly linked list, a node contains data and a pointer to the next node. In a doubly linked list, it also contains a pointer to the previous node.
+
+9. What happens if the node to delete is the first node?
+
+Update the head to point to the second node. If there is no second node, the head becomes NULL or None.
+
+10. Why is random access not possible in linked lists?
+
+Nodes are connected through pointers, so reaching a particular position requires traversing the preceding nodes. There is no direct index-based access like an array.
+Assignment 7: Hashing and Chaining
+1. What is hashing?
+
+Hashing converts a key into an index using a hash function so that data can be stored and retrieved efficiently.
+
+2. What is a hash function?
+
+A hash function maps a key to an index in a hash table.
+
+3. What is the division method?
+
+It calculates the index using the remainder of the key divided by the table size:
+\[
+h(k)=k\bmod m
+\]
+
+Here, \(k\) is the key and \(m\) is the table size.
+
+4. What are collisions?
+
+A collision occurs when two or more keys map to the same hash table index.
+
+5. What is chaining?
+
+Chaining handles collisions by storing multiple elements at the same index in a collection, commonly a linked list.
+
+6. Why do we use linked lists for chaining?
+
+They allow multiple elements to be stored at the same index and can grow dynamically as new collisions occur.
+
+7. What is the time complexity of search in collisions?
+
+Average search time can be \(O(1)\) when hashing distributes keys well and the load factor is controlled. Worst-case time is \(O(n)\).
+
+8. What happens if all keys hash to the same index?
+
+All elements end up in the same chain. Searching can then take \(O(n)\) time.
+
+9. How is deletion handled in chained hashing?
+
+Find the key in the chain and remove its node while maintaining the links between the remaining nodes.
+
+10. What are the advantages of chaining over linear probing?
+
+Chaining handles collisions without requiring another empty table slot, can accommodate more elements than the number of table slots, and supports straightforward deletion. However, it requires additional memory for the chains.
+Assignment 8: Linear Probing and Open Addressing
+1. What is linear probing?
+
+Linear probing is a collision-handling technique that checks consecutive positions in the hash table until an empty slot is found.
+
+2. What is open addressing?
+
+Open addressing is a collision-resolution technique in which all elements are stored directly inside the hash table.
+
+3. What is primary clustering?
+
+Primary clustering occurs when consecutive occupied slots form groups, causing more collisions and longer searches.
+
+4. How do you handle collisions in linear probing?
+
+If the calculated index is occupied, check the next index. Continue until an available slot is found, wrapping around to the beginning if necessary.
+
+5. What does “table full” mean?
+
+It means there are no available slots for inserting another element. The table must be resized or rehashed.
+
+6. What is the probe sequence?
+
+The probe sequence is the order of indices checked when searching for an available slot or a particular key.
+
+For linear probing:
+\[
+h_i(k)=(h(k)+i)\bmod m
+\]
+
+7. Is deletion easy in linear probing?
+
+No. Simply emptying a slot can break the search sequence and make existing elements unreachable during searches.
+
+8. Why must you rehash after deletion?
+
+Rehashing or rebuilding the affected probe sequence can restore correct searching. However, rehashing after every deletion is not necessary; a special deleted marker, called a tombstone, is commonly used.
+
+9. What is the load factor? Why is it important?
+
+The load factor is the ratio of occupied slots to total table slots.
+\[
+\alpha=\frac{\text{Number of stored elements}}{\text{Table size}}
+\]
+
+A high load factor usually increases collisions and reduces performance in linear probing.
+
+10. Compare chaining and linear probing.
+- Chaining: Stores collided elements in a separate collection at the same index.
+- Linear probing: Stores collided elements in other available table slots.
+- Chaining requires extra memory for its collections, while linear probing uses the table itself.
+- Linear probing can suffer from primary clustering.
+Assignment 9: Graphs, BFS and DFS
+1. What is a graph?
+
+A graph is a non-linear data structure consisting of vertices (nodes) and edges connecting them.
+
+2. What is the difference between an adjacency matrix and an adjacency list?
+
+An adjacency matrix uses a \(V \times V\) matrix to represent connections. An adjacency list stores the neighbors of each vertex.
+- Matrix space: \(O(V^2)\).
+- List space: \(O(V+E)\), where \(V\) is the number of vertices and \(E\) is the number of edges.
+3. What is the time complexity of BFS and DFS?
+
+Using an adjacency list, both BFS and DFS take \(O(V+E)\) time.
+
+4. Why does BFS use a queue and DFS use a stack?
+
+BFS uses a queue to visit vertices level by level. DFS uses a stack, explicitly or through recursion, to explore one path deeply before backtracking.
+
+5. What is the difference between a tree and a graph?
+
+A tree is a connected, acyclic graph. A general graph may contain cycles and may be disconnected.
+
+6. Can BFS find the shortest path?
+
+Yes. BFS finds the shortest path in terms of the number of edges in an unweighted graph.
+
+7. Is DFS guaranteed to find the shortest path? Why?
+
+No. DFS follows a path deeply and may find a longer path before a shorter one. It does not guarantee the shortest path.
+
+8. What is a cycle in a graph?
+
+A cycle is a path that starts and ends at the same vertex, following edges without repeating other vertices in a simple cycle.
+
+9. What is the space complexity of DFS recursion?
+
+The recursion stack requires \(O(V)\) space in the worst case. Including the visited array and graph representation, total space using an adjacency list is \(O(V+E)\).
+
+10. What are real-life applications of BFS and DFS?
+
+BFS is used for shortest paths in unweighted networks and finding nearby nodes. DFS is used for cycle detection, maze exploration, and topological sorting of directed acyclic graphs.
+Assignment 10: Dijkstra's Shortest Path Algorithm
+1. Which data structure is used to represent distances between locations?
+
+A weighted graph represents locations as vertices and travel distances or times as edge weights. A distance array or dictionary stores the currently known shortest distance from the source to each vertex.
+
+2. What is the shortest path algorithm?
+
+A shortest path algorithm finds the path with the minimum total cost, such as distance or travel time, between vertices in a graph.
+
+3. Why is Dijkstra's algorithm suitable for weighted graphs?
+
+It considers edge weights and repeatedly selects the vertex with the smallest known tentative distance. It works correctly when edge weights are non-negative.
+
+4. What is a priority queue?
+
+A priority queue removes the element with the highest priority. In Dijkstra's algorithm, a min-priority queue selects the vertex with the smallest tentative distance.
+
+5. Can BFS be used here? Why not?
+
+BFS is suitable when every edge has the same cost or when finding the fewest edges in an unweighted graph. For different non-negative travel costs, Dijkstra's algorithm is generally more appropriate.
+
+6. What is the meaning of “minimum time delivery”?
+
+It means finding a route that minimizes the total travel time from the starting location to the destination.
+
+7. What is the difference between a directed and an undirected graph?
+
+In a directed graph, edges have directions. In an undirected graph, edges allow movement in both directions.
+
+8. What is the difference between a weighted and an unweighted graph?
+
+A weighted graph assigns a value, such as distance or time, to its edges. An unweighted graph does not assign different numerical costs to edges.
+
+9. What is the greedy strategy in Dijkstra's algorithm?
+
+It repeatedly chooses the unvisited vertex with the smallest tentative distance and relaxes its outgoing edges to improve neighboring distances.
+
+10. What happens if a location is unreachable?
+
+Its distance remains infinity, or the program's chosen representation for unreachable locations. The algorithm reports that no path exists.
+Assignment 11: Binary Search Trees (BST)
+1. What is a binary search tree?
+
+A binary search tree is a binary tree in which values in the left subtree are smaller than the node's value and values in the right subtree are larger, assuming distinct keys.
+
+2. What is the difference between a BST and a binary tree?
+
+A binary tree allows each node to have at most two children without requiring a particular value ordering. A BST follows an ordering rule that makes searching easier.
+
+3. Explain the BST insertion rule.
+
+Compare the new value with the current node. If it is smaller, move left; if it is larger, move right. Repeat until an empty position is found.
+
+4. Explain BST search.
+
+Start at the root. If the target matches the current value, it is found. Otherwise, move left for a smaller target or right for a larger target until the target is found or a null node is reached.
+
+5. What are the three traversal methods?
+- Inorder: Left → Root → Right.
+- Preorder: Root → Left → Right.
+- Postorder: Left → Right → Root.
+6. Explain deletion of a node with no child, one child, and two children.
+- No child (leaf): Remove the node.
+- One child: Replace the node with its child.
+- Two children: Replace the node's value with its inorder successor or predecessor, then delete that successor or predecessor from its original position.
+7. What is the inorder traversal result for a BST?
+
+For a BST with distinct keys, inorder traversal produces the values in ascending order.
+
+8. What is the time complexity of searching in a BST?
+
+Average time is \(O(\log n)\) for a reasonably balanced BST. Worst-case time is \(O(n)\).
+
+9. What happens when a BST becomes skewed?
+
+It resembles a linked list, with nodes extending mostly in one direction. Searching, insertion, and deletion can then take \(O(n)\) time.
+
+10. How can AVL trees solve skew problems?
+
+An AVL tree is a self-balancing BST. It uses rotations after insertions and deletions to keep the height balanced, maintaining \(O(\log n)\) search, insertion, and deletion time.
+
+Last-minute viva revision
+These are the concepts worth memorizing first if you have limited time.
+Topic	Key point to remember
+Linear search	\(O(n)\)
+Binary search	\(O(\log n)\), sorted data
+Selection / bubble sort	\(O(n^2)\) worst case
+Stack	LIFO
+Queue	FIFO
+Linked list search	\(O(n)\)
+Hash table lookup	Average \(O(1)\)
+Linear probing	Checks consecutive slots
+BFS	Queue; shortest path in unweighted graphs
+DFS	Stack or recursion
+Dijkstra	Non-negative weights
+BST inorder	Sorted order
+AVL tree	Self-balancing BST
